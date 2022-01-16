@@ -9,6 +9,8 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
     container_name: djsite-db
   web:
     build: ./docker/web
