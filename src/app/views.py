@@ -9,7 +9,6 @@ TEMPLATES_DIR = '../templates'
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
-    s = os.path.isfile('djsite/templates/index.html')
     return render(
         request,
         os.path.join(TEMPLATES_DIR, 'index.html'),
