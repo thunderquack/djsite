@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
    
 services:
   db:
@@ -9,6 +9,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    container_name: djsite-db
   web:
     build: ./docker/web
     command: python manage.py runserver 0.0.0.0:8000
@@ -23,3 +24,4 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+    container_name: djsite-web

@@ -1,8 +1,14 @@
-{% block content %}
+<!DOCTYPE html>
+<html>
 
-<head>{{title}}</head>
+<head>
+    {% load static %}
+</head>
 
 <body>
+    {% block content %}
     Hello
+    {% endblock %}
 </body>
-{% endblock %}
+
+</html>
