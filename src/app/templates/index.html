@@ -5,9 +5,16 @@
     {% load static %}
 </head>
 
-<body>
-    
-    <img src="{% static 'images/img.png' %}" alt="Bender" />
+<body>        
+    {% for post in posts %}
+        {{post.header}}
+    {% endfor %}
+    <form action="/new-blogpost/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Post" />
+    </form>
+    <img src="{% static 'images/img.png' %}" alt="Bender" width="50px" height="auto" />
 
 </body>
 
